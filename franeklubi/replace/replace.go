@@ -34,6 +34,7 @@ func draw() {
     Background(54, 200, 91, 255)
 
     Translate(MouseX, MouseY, 0)
-    PastePixels(img, 0, 0, 200, 200)
-    PastePixels(img.GetPixels(0, 0, 5, 5), 0, -200, 200, 200)
+        img.PastePixels(0, 0, 200, 200)
+        cut := img.GetPixels(0, 0, 5, 5)
+        cut.PastePixels(0, -200, 200, 200)
 }

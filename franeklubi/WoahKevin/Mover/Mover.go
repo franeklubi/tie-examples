@@ -132,7 +132,7 @@ func (m *Mover) Draw() {
             }
 
             // drawing mover avatar
-            PastePixels(m.Avatar, -m.Size/2, -m.Size, m.Size, m.Size)
+            m.Avatar.PastePixels(-m.Size/2, -m.Size, m.Size, m.Size)
 
     // popping transformations
     Pop()
@@ -175,7 +175,7 @@ func (m *Mover) Update() {
 func (m *Mover) Hud() {
     // drawing lives
     for x := 1; x <= m.Lives; x++ {
-        PastePixels(m.Avatar, U_width-(m.Size*2*float64(x))/2-m.Size*0.8, m.Size*0.8, m.Size*0.8, m.Size*0.8)
+        m.Avatar.PastePixels(U_width-(m.Size*2*float64(x))/2-m.Size*0.8, m.Size*0.8, m.Size*0.8, m.Size*0.8)
     }
 
     // drawing things like money and etc

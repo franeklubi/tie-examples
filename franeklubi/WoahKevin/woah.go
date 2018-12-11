@@ -170,7 +170,7 @@ func draw() {
     Translate(U_zero_x, U_zero_y, 0)
 
     Fill(HsvToRgb(0, saturation, 1, byte(alpha)))
-    PastePixels(neutral_tx, 0, 0, U_width, U_height)
+    neutral_tx.PastePixels(0, 0, U_width, U_height)
 
     // draw money in the background
     drawMoney()
@@ -179,7 +179,7 @@ func draw() {
     Fill(255, 255, 255, 255)
 
     // draw bounds
-    PastePixels(background_tx, 0, 0, U_width, U_height)
+    background_tx.PastePixels(0, 0, U_width, U_height)
 
     // draw player
     Fill(255, 255, 255, 255)
@@ -362,7 +362,7 @@ func drawMoney() {
         Fill(255, 0, 0, 255)
 
         // pasting coin texture
-        PastePixels(coin_tx, xpos, hpos, size, size)
+        coin_tx.PastePixels(xpos, hpos, size, size)
     }
 }
 
@@ -784,7 +784,7 @@ func durToMili(t time.Duration) (float64) {
 }
 
 func burst(avatar Image, pos SVector, size float64) {
-    PastePixels(avatar, pos.X-size/2, pos.Y-size/2, size, size)
+    avatar.PastePixels(pos.X-size/2, pos.Y-size/2, size, size)
 }
 
 func keyPressed() {

@@ -47,15 +47,11 @@ func draw() {
     Translate(Width/2, 0, 0)
         RotateY((ReMap(MouseX+Width/2, 0, Width, 0, 360)))
     Translate(-Width/2, 0, 0)
-    // RotateY(Frames)
-    // Println(-float64(int(Frames)%1000)/10)
-    // Translate(0, 0, -float64(int(Frames)%1000)/10)
+
     Translate(value_LR, 0, value_Z)
 
     Fill(255, 255, 255, 255)
     Rect(0, 0, Width, Height)
-
-    // SetCursorPos(Width/2, Height/2)
 
     Push()
         Translate(50, 50, 0)
@@ -76,14 +72,13 @@ func draw() {
 
     Rect(Width, Height/2, 100, 100)
 
-    // PastePixels(pixels, 0, 0, Width, Height)
     Fill(85, 153, 252, 255)
     Ellipse(Width/2, Height/2, Width, Height)
 
     DepthRefreshOff()
 
         Fill(141, 205, 41, 255)
-        Cube(0.5, 0.5, 0.5)
+        Cube(0.5)
 
     DepthRefreshOn()
 
@@ -105,7 +100,7 @@ func draw() {
     Translate(0, 0, -1)
 
     Fill(54, 230, 198, 255)
-    PastePixels(pixels, Width/4*3, Height/4*3, Width/4, Height/4)
+    pixels.PastePixels(Width/4*3, Height/4*3, Width/4, Height/4)
 }
 
 func keyPressed() {

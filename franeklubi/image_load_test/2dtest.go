@@ -44,12 +44,12 @@ func draw() {
 
     Fill(255, 255, 255, 100)
     Translate(MouseX, MouseY, 0)
-    PastePixels(zdj, 0, 0, Width/4, Height/4)
+    zdj.PastePixels(0, 0, Width/4, Height/4)
 
-    PastePixels(zdjwyc, 0, -Height/4, Width/4, Height/4)
+    zdjwyc.PastePixels(0, -Height/4, Width/4, Height/4)
 
     // Background(89, 4, 85, 255)
     Fill(80, 74, 210, 255)
     buffer := CopyPixels()
-    PastePixels(buffer, -Width/4, 0, Width/4, Height/4)
+    buffer.PastePixels(-Width/4, 0, Width/4, Height/4)
 }
